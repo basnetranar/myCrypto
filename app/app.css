@@ -1,0 +1,21 @@
+/* app css stylesheet */
+#mainHeading{
+	color:green;
+	font-size: 60px;
+	text-shadow: 2px 2px blue;
+}
+
+body{
+	background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Baglung.jpg/1200px-Baglung.jpg");
+	background-size: cover;
+}
+
+#motto{
+	color:green;
+	font-size: 30px;
+	text-shadow: 1px 1px blue;
+
+}
+.nav-item{
+	font-size: 25px;
+}

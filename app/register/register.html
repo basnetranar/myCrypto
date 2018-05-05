@@ -1,0 +1,104 @@
+<link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<form class="form-horizontal ">
+<fieldset>
+
+
+<!-- Text input-->
+<div class="row">
+  <label class="col-md-4 control-label text-right" for="firstname">First Name</label>  
+  <div class="col-md-4">
+  <input id="firstname" name="firstname" type="text" placeholder=" First Name" class="form-control input-md">
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="row">
+  <label class="col-md-4 control-label text-right" for="lastname">Last Name</label>  
+  <div class="col-md-4">
+  <input id="lastname" name="lastname" type="text" placeholder="Last Name" class="form-control input-md">
+  </div>
+</div>
+
+<div class="row">
+  <label class="col-md-4 control-label text-right" for="Gender">Gender</label>
+  <div class="col-md-2">
+    <select name="Gender">
+          <option value="" selected>--Select--</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">other</option>
+    </select>
+  </div>
+</div>
+
+<div class="row">
+  <label class="col-md-4 control-label text-right" for="mobile">Mobile Number</label>  
+  <div class="col-md-4">
+    <input id="mobile" name="mobile" type="number" placeholder="Mobile Number" class="form-control input-md">
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="row">
+  <label class="col-md-4 control-label text-right" for="emailid">Email Id</label>  
+  <div class="col-md-4">
+  <input id="emailid" name="emailid" type="email" placeholder="Email ID" class="form-control input-md">
+  </div>
+</div>
+<!-- Text input-->
+<div class="row">
+  <label class="col-md-4 control-label text-right" for="address1">Unit/House No</label>  
+  <div class="col-md-4">
+    <input id="address1" name="address1" type="text" placeholder="Unit/House" class="form-control input-md">
+  </div>
+</div>
+
+<div class="row">
+  <label class="col-md-4 control-label text-right" for="address2">Street Address</label>  
+  <div class="col-md-4">
+    <input id="address2" name="address2" type="text" placeholder="Street address" class="form-control input-md">
+  </div>
+</div>
+
+<!-- Select Multiple -->
+<div class="row">
+  <label class="col-md-4 control-label text-right" for="City">Suburb</label>
+  <div class="col-md-4">
+    <input id="suburb" name="suburn" type="text" placeholder="Suburb " class="form-control input-md">
+  </div>
+</div>
+
+<!-- Select Multiple -->
+<div class="row">
+  <label class="col-md-4 control-label text-right" for="state">State</label>
+  <div class="col-md-1">
+      <select name="states">
+        <option value="" selected>--Select--</option>
+        <option value="NSW">New South Wales</option>
+        <option value="Vic">Victoria</option>
+        <option value="WA">West Australia</option>
+        <option value="SA">South Australia</option>
+        <option value="QLD">QUEENSLAND</option>
+        <option value="TAS">TASMANIA</option>
+      </select>
+  </div>
+</div>
+<div class="row">
+  <label class="col-md-4 control-label text-right" for="zip">Zip Code</label>
+  <div class="col-md-2">
+    <input id="zip" name="zip" type="number" placeholder="Zip Code " class="form-control input-md">
+  </div>
+</div>
+
+<!-- Button -->
+<div class="row">
+  <div class="col-md-4"> </div>
+  <div class="col-md-4 text-right">
+    <button ng-model="signUp" class="btn btn-primary" type="submit" >Sign Up</button>
+  </div>
+</div>
+
+</fieldset>
+</form>

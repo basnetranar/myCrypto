@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Hamro Bazaar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="register/register.css">
+  <link rel="stylesheet" href="login/login.css">
+  <link rel="stylesheet" href="contactUs/contactUs.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+
+</head>
+<body>
+  <h1 id="mainHeading" class="page-header text-center" >HAMRO BAZAAR</h1>
+  </br>
+  <h2 id="motto" class="text-center">BUY SELL FLOURISH</h2>
+
+   <!-- Static navbar -->
+     
+    <nav class="navbar navbar-expand navbar-success">
+  
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item ml-3">
+            <a class="nav-link" href="#/home">Home</a>
+          </li>
+          <li class="nav-item ml-3">
+            <a class="nav-link" href="#/login">Login</a>
+          </li>
+          <li class="nav-item ml-3">
+            <a class="nav-link" href="#/register">Register</a>
+          </li>
+          <li class="nav-item ml-3">
+            <a class="nav-link" href="#/contactUs">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+</br></br>
+
+
+  <div ng-view></div>
+
+ 
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="app.js"></script>
+  <script src="login/login.js"></script>
+  <script src="register/register.js"></script>
+  <script src="contactUs/contactUs.js"></script>
+  <script src="home/home.js"></script>
+  <!-- <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script> -->
+</body>
+</html>

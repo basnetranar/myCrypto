@@ -1,0 +1,40 @@
+
+
+  <div class="row">
+		<label class="col-md-3 text-right  labelSize" for="username">EMAIL:</label>
+	    <div class="col-md-6">
+	      <input type="email"  ng-model="myUsername" id="username" required placeholder="EMAIL"></br>
+	    </div>
+   </div>
+
+
+   <div class="row">
+	    <label class="col-md-3 text-right  labelSize" for="password ">PASSWORD:</label>
+	    <div class="col-md-6">
+	      <input type={{passwordType}} ng-model="myPassword" id="password" placeholder = "PASSWORD" required></br>
+	    </div>
+   </div>
+
+
+   <div class="row">
+   	<div class="col-md-3"></div>
+	    <div class="col-md-3  labelSize">
+	    	<input type="checkbox" ng-model="showPassword" ng-click = "displayPassword()"> Show Password 
+	    </div>
+   </div>
+
+   <div class="row">
+   		<div class="col-md-3"></div>
+	    <div class="col-md-3 labelSize">
+	    	<input type="checkbox" ng-model="rememberMe" ng-click = "rememberUser()"> Remember Me
+	    </div>
+   </div>
+
+   <div class="row">
+   		<div class="col-md-3"></div>
+	    <div class="col-md-3 ">
+	    	<button class = "btn btn-primary btn-sm" id="loginButton" type="submit" ng-click ="verifyUserPassword()">Login</button>
+	    </div>
+   </div>
+
+
