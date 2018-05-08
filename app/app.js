@@ -4,8 +4,6 @@
 angular.module('myApp', [
   'ngRoute',
   'myApp.login',
-  'myApp.contactUs',
-  'myApp.register',
   'myApp.home'
 ]).
 config([ '$routeProvider', function( $routeProvider) {

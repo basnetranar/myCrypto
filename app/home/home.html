@@ -1,8 +1,41 @@
+<div ng-controller = "homeController">
+     
+<div class="form-group ml-3">
+  <label for="crypto" class="ml-3">Crypto Currency:</label>
+  <!-- <select class=" text-info " id="crypto" ng-model="selectedCrypto">
+      <option selected value="btc">Bitcoin</option>
+      <option value="BTC">Bitcoin</option>
+      <option value="LIT">Litecoin</option>
+      <option value="ETH">Etherum</option>
+      <option value="ZCS">Zcash</option>
+      <option value="DAS">Dash</option>
+      <option value="RIP">Ripple</option>
+      <option value="MON">Monero</option>
+  </select> -->
 
+  <select ng-options="option for option in cryptoTypes" 
+            ng-model="selectedCrypto"
+            ng-change="selectedCryptoChanged()">
+    </select>
+
+      <select ng-options="option for option in currencyTypes" 
+            ng-model="selectedCurrency"
+            ng-change="selectedCurrencyChanged()">
+    </select>
+
+  <!-- <label for="currency" class="ml-4">Currency:</label>
+          <select ng-model="selectedCurrency" id="currency" class="text-info">
+            <option  value="usd">USD</option>
+            <option selected value="EUR">EUR</option>
+            <option value="AUD">AUD</option>
+          </select> -->
+</div>
+          
 
 <div class="row">
 	<div class="col-md-12">
 	<input type="text" ng-model="searchField"  placeholder = "Enter the name of the item">
 	<button class="btn btn-primary btn-md" ng-click = "findItems('searchField')">Search</button>
 	</div>
+</div>
 </div>

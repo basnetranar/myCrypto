@@ -10,6 +10,7 @@ angular.module('myApp.login', ['ngRoute'])
 }])
 
 .controller('loginController', ['$scope',function($scope) {
+
 	$scope.message = "welcome to login";
 	$scope.passwordType = "password";
 	console.log($scope.message);

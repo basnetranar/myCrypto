@@ -16,33 +16,60 @@
 
 </head>
 <body>
-  <h1 id="mainHeading" class="page-header text-center" >HAMRO BAZAAR</h1>
+  <h1 id="mainHeading" class="page-header text-center" >CRYPTOMARKET <img ng-src="images/cryptoMarket.png" width="70" height="70"></h1>
   </br>
   <h2 id="motto" class="text-center">BUY SELL FLOURISH</h2>
+</br>
 
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <div class="row">
+        <label for="currency">Currency</label>
+          <select ng-model="currency" id="currency">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="AUD">AUD</option>
+          </select>
+      </div>
+      
+    </div>
+  </div>
+</div> -->
+<!-- <div class="row text-right">
+  <label class="col-md-12 control-label " for="Gender">Gender</label>
+  
+    <select name="Gender" class="pull-right">
+          <option value="" selected>--Select--</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">other</option>
+    </select>
+ 
+</div -->
    <!-- Static navbar -->
-     
+      <!-- <div class="container">
+              <select id="currency" ng-model="selectedCurrency">
+                  <option value="USD" selected>USD</option>
+                  <option value="AUD">AUD</option>
+                  <option value="EUR">EUR</option>
+              </select>
+      </div> -->
     <nav class="navbar navbar-expand navbar-success">
   
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item ml-3">
-            <a class="nav-link" href="#/home">Home</a>
+            <a class="nav-link text-danger" href="#/home">Home</a>
           </li>
           <li class="nav-item ml-3">
-            <a class="nav-link" href="#/login">Login</a>
+            <a class="nav-link text-danger" href="#/login">Live Table</a>
           </li>
-          <li class="nav-item ml-3">
-            <a class="nav-link" href="#/register">Register</a>
-          </li>
-          <li class="nav-item ml-3">
-            <a class="nav-link" href="#/contactUs">Contact Us</a>
-          </li>
+          
         </ul>
       </div>
     </nav>
 
-</br></br>
 
 
   <div ng-view></div>
@@ -52,8 +79,6 @@
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="app.js"></script>
   <script src="login/login.js"></script>
-  <script src="register/register.js"></script>
-  <script src="contactUs/contactUs.js"></script>
   <script src="home/home.js"></script>
   <!-- <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script> -->
 </body>

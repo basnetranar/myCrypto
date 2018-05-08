@@ -19,3 +19,7 @@ body{
 .nav-item{
 	font-size: 25px;
 }
+
+.pullRight{
+	text-align: right;
+}
