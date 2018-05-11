@@ -1,0 +1,26 @@
+
+<div class="container ">
+	<div class="row text-center text-success text-lg">
+		<div class="col-md-2">Name</div>
+		<div class="col-md-2">Price</div>
+		<div class="col-md-2">Volume (24 hr)</div>
+		<div class="col-md-2">% Change (1hr)</div>
+		<div class="col-md-2">% Change (24hr)</div>
+		<div class="col-md-2">% Change (7 days)</div>
+		
+
+	</div>
+	<div class="row text-center text-info" ng-repeat= "values in dataArray">
+		<div class="col-md-2">{{values.name}}</div>
+		<div class="col-md-2">{{values.quotes.USD.price}}</div>
+		<div class="col-md-2">{{values.quotes.USD.volume_24h}}</div>
+		<div class="col-md-2">{{values.quotes.USD.percent_change_1h}}</div>
+		<div class="col-md-2">{{values.quotes.USD.percent_change_24h}}</div>
+		<div class="col-md-2">{{values.quotes.USD.percent_change_7d}}</div>
+		
+	</div>
+
+</div>
+</br>
+<div class="ml-4 text-success" >{{currentTime}}</div>
+

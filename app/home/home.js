@@ -9,50 +9,38 @@ angular.module('myApp.home', ['ngRoute'])
   });
 }])
 
-.controller('homeController', ['$scope','$http','$interval',function($scope,$http,$interval) {
+.controller('homeController', ['$scope','$http','$interval','$timeout',function($scope,$http,$interval,$timeout) {
 
-	$scope.cryptoTypes = ['BTC -BitCoin','LTC -LiteCoin','ETH -Ethereum','ZEC -ZCash','DASH-Dash','XRP -Ripple','MON -Monero'];
+	$scope.cryptoTypes = ['BTC-BitCoin','BCH-Bitcoin Cash','LTC-LiteCoin','ETH-Ethereum','ZEC-ZCash','DASH-Dash','XRP-Ripple','XMR-Monero'];
 	$scope.currencyTypes = ['USD','AUD','EUR'];
 	$scope.Crypto = 'BTC';
 	$scope.Currency = 'USD';
-	$scope.interval = 30000;
-
+	$scope.marketArray = [];
+	$scope.currentTime = 0;
 
 	$scope.selectedCurrencyChanged = function(){
-    $scope.Currency = 'You selected number ' + $scope.selectedCurrency;
-    console.log($scope.Currency);
+    $scope.Currency = $scope.selectedCurrency;
     getTicker();
   }
 
   $scope.selectedCryptoChanged = function(){
-    $scope.Crypto =  $scope.selectedCrypto.slice(0,3);
-    console.log($scope.Crypto);
+    $scope.Crypto =  ($scope.selectedCrypto.split('-'))[0];
     getTicker();
   }
 
-	$scope.getTicker = function(){
-	
+	var getTicker = function(){
+
 		$http.get(' https://api.cryptonator.com/api/full/' + $scope.Crypto + "-" + $scope.Currency)
 		.then(function successCallback(response){
-		$scope.data = response.data;
-		console.log($scope.data);
+		$scope.result = response.data;
+		$scope.marketArray = $scope.result.ticker.markets;
+		$scope.currentTime = Date();
 		}),
 		function errorCallback(response) {
 			console.log("page is invalid")};
-		$interval(function(){$scope.getTicker();},$scope.interval);
+		
 	}
-	//$interval(getTicker,$scope.interval);
-	 $scope.getTicker();
-
-
-
-
-	$http.get(' https://api.cryptonator.com/api/full/' + $scope.Crypto + "-" + $scope.Currency)
-	.then(function successCallback(response){
-	$scope.data = response.data;
-	console.log($scope.data);
-	}),
-	function errorCallback(response) {
-		console.log("page is invalid")};
+	getTicker();
+	$interval(getTicker,30000);
 	
 }]);
