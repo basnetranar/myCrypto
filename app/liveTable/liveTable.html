@@ -1,26 +1,29 @@
 
-<div class="container ">
-	<div class="row text-center text-success text-lg">
-		<div class="col-md-2">Name</div>
-		<div class="col-md-2">Price</div>
-		<div class="col-md-2">Volume (24 hr)</div>
-		<div class="col-md-2">% Change (1hr)</div>
-		<div class="col-md-2">% Change (24hr)</div>
-		<div class="col-md-2">% Change (7 days)</div>
-		
+<table class="table table-striped text-center">
+	<thead class="thead-light">
+		<tr>
+			<th scope="col">Name</th>
+			<th scope="col">Price</th>
+			<th scope="col">Volume (24 hr)</th>
+			<th scope="col">% Change (1hr)</th>
+			<th scope="col">% Change (24hr)</th>
+			<th scope="col">% Change (7 days)</th>
+		</tr>
+	</thead>
 
-	</div>
-	<div class="row text-center text-info" ng-repeat= "values in dataArray">
-		<div class="col-md-2">{{values.name}}</div>
-		<div class="col-md-2">{{values.quotes.USD.price}}</div>
-		<div class="col-md-2">{{values.quotes.USD.volume_24h}}</div>
-		<div class="col-md-2">{{values.quotes.USD.percent_change_1h}}</div>
-		<div class="col-md-2">{{values.quotes.USD.percent_change_24h}}</div>
-		<div class="col-md-2">{{values.quotes.USD.percent_change_7d}}</div>
-		
-	</div>
+	<tbody>
+		<tr ng-repeat= "values in dataArray">
+			<td scope="col">{{values.name}}</td>
+			<td scope="col">{{values.quotes.USD.price}}</td>
+			<td scope="col">{{values.quotes.USD.volume_24h}}</td>
+			<td scope="col">{{values.quotes.USD.percent_change_1h}}</td>
+			<td scope="col">{{values.quotes.USD.percent_change_24h}}</td>
+			<td scope="col">{{values.quotes.USD.percent_change_7d}}</td>
+		</tr>
+	</tbody>
+	
 
-</div>
+</table>
 </br>
 <div class="ml-4 text-success" >{{currentTime}}</div>
 

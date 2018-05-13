@@ -14,7 +14,7 @@ angular.module('myApp.liveTable', ['ngRoute'])
 	$scope.dataArray = [];
 	var tableData = function(){
 
-		$http.get('https://api.coinmarketcap.com/v2/ticker/?limit=10')
+		$http.get('https://api.coinmarketcap.com/v2/ticker/?limit=50')
 		.then(function successCallback(response){
 		$scope.result = response.data;
 		$scope.dataArray = $scope.result.data;

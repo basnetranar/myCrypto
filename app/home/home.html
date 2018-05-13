@@ -2,14 +2,14 @@
      
 <div class="form-group ml-3">
   
-  <label for="crypto" class="ml-3 text-warning">Crypto:</label>
+  <label for="crypto" class="ml-3">Crypto:</label>
   <select ng-options="option for option in cryptoTypes" 
             ng-model="selectedCrypto"
             id = 'crypto'
             ng-change="selectedCryptoChanged()">
     </select>
 
-  <label for="currency" class="ml-3 text-warning">Currency:</label>
+  <label for="currency" class="ml-3 ">Currency:</label>
   <select ng-options="option for option in currencyTypes" 
             ng-model="selectedCurrency"
             id="currency" 
@@ -18,18 +18,56 @@
 
 </div>
 
-<div class="container ">
-	<div class="row text-center text-success text-lg">
+<table class="table table-striped text-center">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Type</th>
+      <th scope="col">Price</th>
+      <th scope="col">Volume Traded (24 hr)</th>
+      <th scope="col">Change (1 hr)</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td scope="col">{{base}}</td>
+      <td scope="col">{{price}}</td>
+      <td scope="col">{{volume}}</td>
+      <td scope="col">{{change}}</td>
+    </tr>
+      
+  </tbody>
+</table>
+</br>
+
+<table class="table table-striped text-center">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Market</th>
+      <th scope="col">Price</th>
+      <th scope="col">Volume Traded (24 hr)</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr ng-repeat= "values in marketArray">
+      <td scope="col">{{values.market}}</td>
+      <td scope="col">{{values.price}}</td>
+      <td scope="col">{{values.volume}}</td>
+    </tr>
+      
+  </tbody>
+	<!-- <div class="row text-center text-success text-lg">
 		<div class="col-md-4">Market</div>
 		<div class="col-md-4">Price</div>
 		<div class="col-md-4">Volume Traded</div>
-	</div>
-	<div class="row text-center text-info" ng-repeat= "values in marketArray">
+	</div> -->
+	<!-- <div class="row text-center text-info" ng-repeat= "values in marketArray">
 		<div class="col-md-4">{{values.market}}</div>
 		<div class="col-md-4">{{values.price}}</div>
 		<div class="col-md-4">{{values.volume}}</div>
-	</div>
+	</div> -->
 
-</div>
+</table>
 </br>
 <div class="ml-4 text-success" >{{currentTime}}</div>

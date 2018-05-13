@@ -17,6 +17,10 @@ angular.module('myApp.home', ['ngRoute'])
 	$scope.Currency = 'USD';
 	$scope.marketArray = [];
 	$scope.currentTime = 0;
+	$scope.base = "";
+	$scope.price = 0;
+	$scope.volume = 0;
+	$scope.change = 0;
 
 	$scope.selectedCurrencyChanged = function(){
     $scope.Currency = $scope.selectedCurrency;
@@ -33,7 +37,12 @@ angular.module('myApp.home', ['ngRoute'])
 		$http.get(' https://api.cryptonator.com/api/full/' + $scope.Crypto + "-" + $scope.Currency)
 		.then(function successCallback(response){
 		$scope.result = response.data;
+		console.log($scope.result);
 		$scope.marketArray = $scope.result.ticker.markets;
+		$scope.base = $scope.result.ticker.base;
+		$scope.price = $scope.result.ticker.price;
+		$scope.volume = $scope.result.ticker.volume;
+		$scope.change = $scope.result.ticker.change;
 		$scope.currentTime = Date();
 		}),
 		function errorCallback(response) {

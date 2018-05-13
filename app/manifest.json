@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name"            : "Crypto",
+  "description"     : "Track Fluctuating crpyto prices",
+  "short_name"      : "orypto",
+  "version"         : "0.1",
+    
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_icon" : "images/cryptoMarket.png"
+  },
+  "permissions": [
+    "debugger",
+    "storage"
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
