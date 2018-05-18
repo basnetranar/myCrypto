@@ -1,4 +1,16 @@
 
+<!-- creatre search input -->
+<!-- <div class="container ml-1">
+	<div class="row">
+	    <div class="col-md-4"><input type="text" ng-model="searchedData" placeholder="Search For Currency"></div>
+ -->	    <!-- <div class="col-md-1"><button class="btn btn-primary btn-sm"  ng-click="filterCurrency()">Filter Currency</button></div> -->
+<!-- 	</div>
+</div>
+</br> -->
+<div class="mr-2 text-info text-right">
+	SEARCH:<input type="text" ng-model="searchedData" class="ml-1" ng-keyup = "tableData()">
+</div>
+
 <table class="table table-striped text-center">
 	<thead class="thead-light">
 		<tr>
@@ -12,13 +24,13 @@
 	</thead>
 
 	<tbody>
-		<tr ng-repeat= "values in dataArray">
-			<td scope="col">{{values.name}}</td>
-			<td scope="col">{{values.quotes.USD.price}}</td>
-			<td scope="col">{{values.quotes.USD.volume_24h}}</td>
-			<td scope="col">{{values.quotes.USD.percent_change_1h}}</td>
-			<td scope="col">{{values.quotes.USD.percent_change_24h}}</td>
-			<td scope="col">{{values.quotes.USD.percent_change_7d}}</td>
+		<tr ng-repeat= "values in dataArray ">
+			<td scope="col">{{values[0]}}</td>
+			<td scope="col">{{values[1]}}</td>
+			<td scope="col">{{values[2]}}</td>
+			<td scope="col">{{values[3]}}</td>
+			<td scope="col">{{values[4]}}</td>
+			<td scope="col">{{values[5]}}</td>
 		</tr>
 	</tbody>
 	

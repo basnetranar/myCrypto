@@ -37,7 +37,6 @@ angular.module('myApp.home', ['ngRoute'])
 		$http.get(' https://api.cryptonator.com/api/full/' + $scope.Crypto + "-" + $scope.Currency)
 		.then(function successCallback(response){
 		$scope.result = response.data;
-		console.log($scope.result);
 		$scope.marketArray = $scope.result.ticker.markets;
 		$scope.base = $scope.result.ticker.base;
 		$scope.price = $scope.result.ticker.price;

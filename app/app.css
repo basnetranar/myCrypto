@@ -20,6 +20,16 @@
 	font-size: 25px;
 }
 
-/*.pullRight{
-	text-align: right;
-}*/
+@keyframes rotatingLogo{
+	0% {transform: rotate(360deg);}
+	25%:{transform: rotate(72deg);}
+	50%:{transform: rotate(72deg);}
+	75%:{transform: rotate(72deg);}
+	100%:;{transform: rotate(72deg);}
+}
+
+img {
+    animation-name: rotatingLogo;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
