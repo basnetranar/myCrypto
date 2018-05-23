@@ -13,6 +13,7 @@ angular.module('myApp.liveTable', ['ngRoute'])
 
 	$scope.dataArray = [];
 	$scope.searchedData = "";
+	$scope.updatedDataArray = [];
 	
 	var tableData = function(){
 
@@ -24,70 +25,56 @@ angular.module('myApp.liveTable', ['ngRoute'])
 		$scope.result = (response.data);
 		$scope.dataArray = [];
 
-		if($scope.searchedData==""){
-			//console.log("empty string");
+		for(var datas in $scope.result.data){
+			var tempDataArray = [];
+			tempDataArray.push($scope.result.data[datas].name);
+			tempDataArray.push($scope.result.data[datas].quotes.USD.price);
+			tempDataArray.push($scope.result.data[datas].quotes.USD.volume_24h);
+			tempDataArray.push($scope.result.data[datas].quotes.USD.percent_change_1h);
+			tempDataArray.push($scope.result.data[datas].quotes.USD.percent_change_24h);
+			tempDataArray.push($scope.result.data[datas].quotes.USD.percent_change_7d);
 
-			for(var datas in $scope.result.data){
-				var tempDataArray = [];
-				//console.log($scope.result.data[datas].name);
-				tempDataArray.push($scope.result.data[datas].name);
-				tempDataArray.push($scope.result.data[datas].quotes.USD.price);
-				tempDataArray.push($scope.result.data[datas].quotes.USD.volume_24h);
-				tempDataArray.push($scope.result.data[datas].quotes.USD.percent_change_1h);
-				tempDataArray.push($scope.result.data[datas].quotes.USD.percent_change_24h);
-				tempDataArray.push($scope.result.data[datas].quotes.USD.percent_change_7d);
-
-				$scope.dataArray.push(tempDataArray);
-		}}
-		else{
-			//console.log($scope.searchedData);
-			for(var datas in $scope.result.data){
-				
-				var tempDataArray = [];
-				var tempSearchInput = "";
-				($scope.searchedData.length === 1)? tempSearchInput = $scope.searchedData.charAt(0).toUpperCase() : tempSearchInput = $scope.searchedData.charAt(0).toUpperCase() + $scope.searchedData.slice(1);
-					//console.log(tempSearchInput);
-					if($scope.result.data[datas].name.startsWith(tempSearchInput)){
-						tempDataArray.push($scope.result.data[datas].name);
-						tempDataArray.push($scope.result.data[datas].quotes.USD.price);
-						tempDataArray.push($scope.result.data[datas].quotes.USD.volume_24h);
-						tempDataArray.push($scope.result.data[datas].quotes.USD.percent_change_1h);
-						tempDataArray.push($scope.result.data[datas].quotes.USD.percent_change_24h);
-						tempDataArray.push($scope.result.data[datas].quotes.USD.percent_change_7d);
-
-						$scope.dataArray.push(tempDataArray);
-						//console.log($scope.dataArray);
-					};
+			$scope.dataArray.push(tempDataArray);
 		};
-			// console.log('dataArray ready');
-			// console.log($scope.dataArray);
-			
-		};
-
-		// if($scope.searchedData !="")
-		// {
-		// 	for(var i=0;i<$scope.dataArray.length;i++){
-		// 		if($scope.searchedData.length == 1){
-		// 			if(!$scope.dataArray[i][0].startsWith($scope.searchedData.charAt(0).toUpperCase())){
-		// 				$scope.dataArray.splice(i,1);
-		// 				i--;
-		// 				console.log($scope.dataArray);
-		// 			}
-		// 		}
-		// 	}
-	
-		
-		// };
-		// $scope.getSearchData();
-
+		updateTableData();
 		$scope.currentTime = Date();
 
 		}),
 		function errorCallback(response) {
 			console.log(response.data)};
 		
-	}
+	};
 	
 	tableData();
 	$interval(tableData,30000);
+
+	var updateTableData = function () {
+
+		$scope.updatedDataArray = [];
+		if($scope.searchedData!=""){
+
+			for(var datas in $scope.dataArray){
+				var tempDataArray = [];
+				var tempSearchInput = "";
+				($scope.searchedData.length === 1)? tempSearchInput = $scope.searchedData.charAt(0).toUpperCase() : tempSearchInput = $scope.searchedData.charAt(0).toUpperCase() + $scope.searchedData.slice(1);
+					
+					if($scope.dataArray[datas][0].startsWith(tempSearchInput)){
+						tempDataArray.push($scope.dataArray[datas][0]);
+						tempDataArray.push($scope.dataArray[datas][1]);
+						tempDataArray.push($scope.dataArray[datas][2]);
+						tempDataArray.push($scope.dataArray[datas][3]);
+						tempDataArray.push($scope.dataArray[datas][4]);
+						tempDataArray.push($scope.dataArray[datas][5]);
+
+						$scope.updatedDataArray.push(tempDataArray);
+					};
+			};
+			
+		}
+		else{
+			$scope.updatedDataArray = $scope.dataArray.slice();
+		}
+	};
+	updateTableData();
+	$interval(updateTableData,1000);
 }]);
